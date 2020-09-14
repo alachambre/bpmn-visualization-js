@@ -57,8 +57,8 @@ jobs:
       - name: Upload unit test results
         if: always()
         uses: actions/upload-artifact@v2
-          with:
-            name: unit-test-results-${{github.sha}}
-            path: build/test-report/unit
+        with:
+          name: unit-test-results-${{github.sha}}
+          path: build/test-report/unit
       - name: Test Application End to End
         run: npm run test:e2e
