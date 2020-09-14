@@ -58,7 +58,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v2
         with:
-          name: unit-test-results-${{github.sha}}
+          name: unit-test-results-${{matrix.os.name}}-${{github.sha}}
           path: build/test-report/unit
       - name: Test Application End to End
         run: npm run test:e2e
