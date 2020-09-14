@@ -25,6 +25,16 @@ module.exports = {
   transform: {
     '^.+\\.ts?$': 'ts-jest',
   },
+  reporters: [
+    'default',
+    [
+      'jest-html-reporter',
+      {
+        pageTitle: 'bpmn-visualization Test Report',
+        outputPath: 'build/test-report/index.html',
+      },
+    ],
+  ],
   collectCoverageFrom: ['**/*.{ts,js}'],
   coveragePathIgnorePatterns: ['/node_modules/', 'dist', 'test'],
   coverageThreshold: {
