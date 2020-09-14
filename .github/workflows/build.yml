@@ -55,7 +55,7 @@ jobs:
       - name: Test Application
         run: npm run test:unit
       - name: Upload unit test results
-        if: ${{ failure() }}
+        if: failure()
         uses: actions/upload-artifact@v2
         with:
           name: unit-test-results-${{matrix.os.name}}-${{github.sha}}
@@ -63,7 +63,7 @@ jobs:
       - name: Test Application End to End
         run: npm run test:e2e
       - name: Upload e2e test results
-        if: ${{ failure() }}
+        if: failure()
         uses: actions/upload-artifact@v2
         with:
           name: e2e-test-results-${{matrix.os.name}}-${{github.sha}}
