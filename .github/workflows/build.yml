@@ -61,9 +61,10 @@ jobs:
           name: unit-test-results-${{matrix.os.name}}-${{github.sha}}
           path: build/test-report/unit
       - name: Test Application End to End
+        id: test_e2e
         run: npm run test:e2e
       - name: Upload e2e test results
-        if: failure()
+        if: steps.test_e2e.outcome == 'failure'
         uses: actions/upload-artifact@v2
         with:
           name: e2e-test-results-${{matrix.os.name}}-${{github.sha}}
