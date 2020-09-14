@@ -30,8 +30,10 @@ module.exports = {
     [
       'jest-html-reporter',
       {
-        pageTitle: 'bpmn-visualization Test Report',
-        outputPath: 'build/test-report/index.html',
+        pageTitle: 'bpmn-visualization Unit Test Report',
+        outputPath: 'build/test-report/unit/index.html',
+        includeFailureMsg: true,
+        includeSuiteFailure: true,
       },
     ],
   ],
